@@ -29,13 +29,13 @@
                                 <rect key="frame" x="68" y="382" width="278" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="justified" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-XC-ujH">
                                 <rect key="frame" x="68" y="448" width="278" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adf-Dg-6Ic">
                                 <rect key="frame" x="68" y="502" width="51" height="25"/>
@@ -116,7 +116,7 @@
                     <connections>
                         <outlet property="passwordField" destination="S9n-XC-ujH" id="UcO-wq-IC8"/>
                         <outlet property="usernameField" destination="odg-tl-DT7" id="xQu-Ta-AhT"/>
-                        <segue destination="rnM-Ft-NaW" kind="presentation" id="miH-Uo-WML"/>
+                        <segue destination="rnM-Ft-NaW" kind="presentation" identifier="loginSegue" id="miH-Uo-WML"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

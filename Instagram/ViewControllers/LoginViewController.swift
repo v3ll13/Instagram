@@ -116,7 +116,7 @@ class LoginViewController: UIViewController {
                     
                 }else {
                     print("Login Success")
-                    //self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     
                 }
             }

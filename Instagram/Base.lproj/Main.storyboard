@@ -35,7 +35,7 @@
                                 <rect key="frame" x="68" y="448" width="278" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adf-Dg-6Ic">
                                 <rect key="frame" x="68" y="502" width="51" height="25"/>
@@ -85,6 +85,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="odg-tl-DT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="3gp-Fw-49O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S9n-XC-ujH" secondAttribute="trailing" constant="68" id="BAH-Oq-MBH"/>
@@ -112,6 +113,9 @@
                             <constraint firstItem="VOG-vC-jYu" firstAttribute="leading" secondItem="adf-Dg-6Ic" secondAttribute="trailing" constant="171" id="yqi-I3-AHL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Qig-8U-QNT" appends="YES" id="goQ-sx-DRw"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="S9n-XC-ujH" id="UcO-wq-IC8"/>
@@ -120,6 +124,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Qig-8U-QNT">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="EAc-2K-QPo"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="131.25"/>
         </scene>

@@ -33,6 +33,9 @@ class LoginViewController: UIViewController {
     }
     
     
+    @IBAction func onTap(_ sender: Any) {
+         view.endEditing(true)
+    }
     // ------------------------------------------MEHTODs------------------------------------------------
     
     //all the methods related to th login and signin

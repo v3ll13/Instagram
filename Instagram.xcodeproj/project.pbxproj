@@ -18,6 +18,7 @@
 		F323C0BF218A4F6000B2D936 /* InstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323C0BE218A4F6000B2D936 /* InstagramTests.swift */; };
 		F323C0CA218A4F6000B2D936 /* InstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323C0C9218A4F6000B2D936 /* InstagramUITests.swift */; };
 		F3741B03218B655500FAAE4E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3741B02218B655500FAAE4E /* LoginViewController.swift */; };
+		F3741B07218D6D3700FAAE4E /* CameraPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3741B06218D6D3700FAAE4E /* CameraPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		F323C0C9218A4F6000B2D936 /* InstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramUITests.swift; sourceTree = "<group>"; };
 		F323C0CB218A4F6000B2D936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3741B02218B655500FAAE4E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F3741B06218D6D3700FAAE4E /* CameraPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				F3741B02218B655500FAAE4E /* LoginViewController.swift */,
+				F3741B06218D6D3700FAAE4E /* CameraPickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			files = (
 				F3741B03218B655500FAAE4E /* LoginViewController.swift in Sources */,
 				F323C0AC218A4F5900B2D936 /* ViewController.swift in Sources */,
+				F3741B07218D6D3700FAAE4E /* CameraPickerViewController.swift in Sources */,
 				F323C0AA218A4F5900B2D936 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

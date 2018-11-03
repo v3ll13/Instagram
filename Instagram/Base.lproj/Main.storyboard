@@ -180,6 +180,13 @@
                                 <state key="normal" title="Logout"/>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="e4p-Xc-hGX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XVP-hd-JvB">
+                                <rect key="frame" x="369" y="9.6666666666666643" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="insta_camera_btn"/>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCT-kN-3OZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,6 +283,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="KTx-VJ-Ydk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qlq-N8-WWA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -348,6 +356,7 @@
     </scenes>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
         <image name="logIn" width="647" height="363"/>
         <image name="profile_tab" width="25" height="25"/>
     </resources>

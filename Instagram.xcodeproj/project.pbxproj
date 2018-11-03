@@ -11,14 +11,13 @@
 		36F3017BA8F80F6A167F49F9 /* Pods_InstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ED09103640406B2C4DE852 /* Pods_InstagramTests.framework */; };
 		ACF8DD9E6A102E468994AD3B /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0CCBF36809471F0BA98774 /* Pods_Instagram.framework */; };
 		F323C0AA218A4F5900B2D936 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323C0A9218A4F5900B2D936 /* AppDelegate.swift */; };
-		F323C0AC218A4F5900B2D936 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323C0AB218A4F5900B2D936 /* ViewController.swift */; };
 		F323C0AF218A4F5900B2D936 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F323C0AD218A4F5900B2D936 /* Main.storyboard */; };
 		F323C0B1218A4F5900B2D936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F323C0B0218A4F5900B2D936 /* Assets.xcassets */; };
 		F323C0B4218A4F5900B2D936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F323C0B2218A4F5900B2D936 /* LaunchScreen.storyboard */; };
 		F323C0BF218A4F6000B2D936 /* InstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323C0BE218A4F6000B2D936 /* InstagramTests.swift */; };
 		F323C0CA218A4F6000B2D936 /* InstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323C0C9218A4F6000B2D936 /* InstagramUITests.swift */; };
 		F3741B03218B655500FAAE4E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3741B02218B655500FAAE4E /* LoginViewController.swift */; };
-		F3741B07218D6D3700FAAE4E /* CameraPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3741B06218D6D3700FAAE4E /* CameraPickerViewController.swift */; };
+		F3741B0F218DE23400FAAE4E /* IGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3741B0E218DE23400FAAE4E /* IGViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		C3A09B30861CE14552A8896C /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
 		F323C0A6218A4F5900B2D936 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F323C0A9218A4F5900B2D936 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F323C0AB218A4F5900B2D936 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F323C0AE218A4F5900B2D936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F323C0B0218A4F5900B2D936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F323C0B3218A4F5900B2D936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +60,7 @@
 		F323C0C9218A4F6000B2D936 /* InstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramUITests.swift; sourceTree = "<group>"; };
 		F323C0CB218A4F6000B2D936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3741B02218B655500FAAE4E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		F3741B06218D6D3700FAAE4E /* CameraPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPickerViewController.swift; sourceTree = "<group>"; };
+		F3741B0E218DE23400FAAE4E /* IGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,10 +139,9 @@
 		F323C0A8218A4F5900B2D936 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				F3741B0D218DE1E800FAAE4E /* Views */,
 				F323C0D9218A4F9B00B2D936 /* ViewControllers */,
-				F323C0D8218A4F8600B2D936 /* Views */,
 				F323C0A9218A4F5900B2D936 /* AppDelegate.swift */,
-				F323C0AB218A4F5900B2D936 /* ViewController.swift */,
 				F323C0AD218A4F5900B2D936 /* Main.storyboard */,
 				F323C0B0218A4F5900B2D936 /* Assets.xcassets */,
 				F323C0B2218A4F5900B2D936 /* LaunchScreen.storyboard */,
@@ -171,20 +168,20 @@
 			path = InstagramUITests;
 			sourceTree = "<group>";
 		};
-		F323C0D8218A4F8600B2D936 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		F323C0D9218A4F9B00B2D936 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				F3741B02218B655500FAAE4E /* LoginViewController.swift */,
-				F3741B06218D6D3700FAAE4E /* CameraPickerViewController.swift */,
+				F3741B0E218DE23400FAAE4E /* IGViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F3741B0D218DE1E800FAAE4E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,8 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3741B03218B655500FAAE4E /* LoginViewController.swift in Sources */,
-				F323C0AC218A4F5900B2D936 /* ViewController.swift in Sources */,
-				F3741B07218D6D3700FAAE4E /* CameraPickerViewController.swift in Sources */,
+				F3741B0F218DE23400FAAE4E /* IGViewController.swift in Sources */,
 				F323C0AA218A4F5900B2D936 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

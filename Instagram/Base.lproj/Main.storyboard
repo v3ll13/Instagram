@@ -135,7 +135,7 @@
         <!--View Controller-->
         <scene sceneID="CDP-Q9-T2V">
             <objects>
-                <viewController id="rnM-Ft-NaW" customClass="IGViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthenticatedViewController" id="rnM-Ft-NaW" customClass="IGViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cdQ-bK-ClC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyZ-Y4-PIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4437.68115942029" y="96.195652173913047"/>
+            <point key="canvasLocation" x="4443" y="130"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gtF-t8-MhE">
@@ -337,12 +337,12 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="SGK-8M-DI2" kind="relationship" relationship="rootViewController" id="Ekj-Uo-mHi"/>
-                        <segue destination="rnM-Ft-NaW" kind="presentation" id="UNG-0u-5hi"/>
+                        <segue destination="rnM-Ft-NaW" kind="presentation" identifier="" id="UNG-0u-5hi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cs-iW-Gy4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3641" y="96"/>
+            <point key="canvasLocation" x="3764" y="-682"/>
         </scene>
         <!--Profile-->
         <scene sceneID="8i3-Ii-FJW">
@@ -371,6 +371,6 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UNG-0u-5hi"/>
+        <segue reference="Cud-7W-Uu7"/>
     </inferredMetricsTieBreakers>
 </document>

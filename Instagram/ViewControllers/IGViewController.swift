@@ -13,12 +13,11 @@ class IGViewController: UIViewController, UIImagePickerControllerDelegate, UINav
     @IBOutlet weak var captionImg: UILabel!
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var chooseImg: UIButton!
-    var imagePicker = UIImagePickerController()
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         imagePicker.delegate = self
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -26,54 +25,58 @@ class IGViewController: UIViewController, UIImagePickerControllerDelegate, UINav
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
     
     @IBAction func onChooseImg(_ sender: Any) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        
-        
-        /*
-         The sourceType property wants a value of the enum named        UIImagePickerControllerSourceType, which gives 3 options:
-         
-         UIImagePickerControllerSourceType.PhotoLibrary
-         UIImagePickerControllerSourceType.Camera
-         UIImagePickerControllerSourceType.SavedPhotosAlbum
-         
-         */
-        present(imagePicker, animated: true, completion: nil)
+         ImagePickerIns()
        
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func ImagePickerIns (){
+        let vc = UIImagePickerController()
+        vc.delegate = self
         
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            ImageView.contentMode = .scaleAspectFit
-            ImageView.image = pickedImage
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            print("Camera is available 📸")
+            //vc.sourceType = .camera
+            vc.allowsEditing = true
+            vc.sourceType = UIImagePickerControllerSourceType.camera
+        } else {
+            print("Camera 🚫 available so we will use photo library instead")
+            vc.allowsEditing = true
+            vc.sourceType = .photoLibrary
+         
+           
         }
+       
         
+        self.present(vc, animated: true, completion: nil)
+       
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        // Get the image captured by the UIImagePickerController
+        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
-        /*
-         
-         Swift Dictionary named “info”.
-         We have to unpack it from there with a key asking for what media information we want.
-         We just want the image, so that is what we ask for.  For reference, the available options are:
-         
-         UIImagePickerControllerMediaType
-         UIImagePickerControllerOriginalImage
-         UIImagePickerControllerEditedImage
-         UIImagePickerControllerCropRect
-         UIImagePickerControllerMediaURL
-         UIImagePickerControllerReferenceURL
-         UIImagePickerControllerMediaMetadata
-         
-         */
+        ImageView.contentMode = .scaleToFill
+        ImageView.image = originalImage
+        ImageView.image = editedImage
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        // Do something with the images (based on your use case)
+        
+        // Dismiss UIImagePickerController to go back to your original view controller
         dismiss(animated: true, completion: nil)
     }
+  
+  
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion:nil)
-    }
     
+   
     /*
     // MARK: - Navigation
 

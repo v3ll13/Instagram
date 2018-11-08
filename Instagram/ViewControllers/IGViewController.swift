@@ -26,31 +26,47 @@ class IGViewController: UIViewController, UIImagePickerControllerDelegate, UINav
         // Dispose of any resources that can be recreated.
     }
    
+    @IBAction func onSelctImg(_ sender: Any) {
+        ImagePickerIns()
+    }
     
     @IBAction func onChooseImg(_ sender: Any) {
-         ImagePickerIns()
+         performSegue(withIdentifier: "PickSegue", sender: self)
        
     }
     
     func ImagePickerIns (){
+        
         let vc = UIImagePickerController()
         vc.delegate = self
         
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            print("Camera is available 📸")
-            //vc.sourceType = .camera
-            vc.allowsEditing = true
-            vc.sourceType = UIImagePickerControllerSourceType.camera
-        } else {
-            print("Camera 🚫 available so we will use photo library instead")
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(UIAlertAction) in
+           
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                print("Camera is available 📸")
+                //vc.sourceType = .camera
+                vc.allowsEditing = true
+                vc.sourceType = UIImagePickerControllerSourceType.camera
+            } else {
+                print("Camera 🚫 available so we will use photo library instead")
+                let alertController = UIAlertController(title: "Camera 🚫", message: "Camera is unavailable on this emulator device - Let's try Photo Library", preferredStyle: .alert)
+                self.present(alertController, animated: true, completion: nil)
+                // add the OK action to the alert controller
+                alertController.addAction(UIAlertAction)
+                
+                
+            }
+            self.present(vc, animated: true, completion: nil)
+            
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Photo Library ...", style: .default, handler: {(UIAlertAction) in
             vc.allowsEditing = true
             vc.sourceType = .photoLibrary
-         
-           
-        }
-       
-        
-        self.present(vc, animated: true, completion: nil)
+            self.present(vc, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
        
     }
     

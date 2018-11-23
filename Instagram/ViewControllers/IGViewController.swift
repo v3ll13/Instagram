@@ -7,17 +7,16 @@
 //
 
 import UIKit
+import Parse
 
 class IGViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var captionImg: UILabel!
+   
     @IBOutlet weak var ImageView: UIImageView!
-    @IBOutlet weak var chooseImg: UIButton!
- 
+    @IBOutlet weak var captionText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
@@ -30,10 +29,24 @@ class IGViewController: UIViewController, UIImagePickerControllerDelegate, UINav
         ImagePickerIns()
     }
     
-    @IBAction func onChooseImg(_ sender: Any) {
-         performSegue(withIdentifier: "PickSegue", sender: self)
-       
+    @IBAction func onSubmit(_ sender: Any) {
+            Shared()
     }
+    
+    
+    func Shared(){
+        Post.postUserImage(image: ImageView.image, withCaption: captionText.text) { (success: Bool, error: Error?) in
+            if success {
+                print("posting Image")
+                self.ImageView.image = nil
+                NotificationCenter.default.post(name: NSNotification.Name("didShare"), object: nil)
+            } else {
+                print("Image not posted")
+                print("error: \(String(describing: error))")
+            }
+        }
+    }
+    
     
     func ImagePickerIns (){
         
@@ -76,12 +89,13 @@ class IGViewController: UIViewController, UIImagePickerControllerDelegate, UINav
         // Get the image captured by the UIImagePickerController
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+      
         
         ImageView.contentMode = .scaleToFill
         ImageView.image = originalImage
         ImageView.image = editedImage
         
-        picker.dismiss(animated: true, completion: nil)
+        //picker.dismiss(animated: true, completion: nil)
         
         // Do something with the images (based on your use case)
         
@@ -89,10 +103,9 @@ class IGViewController: UIViewController, UIImagePickerControllerDelegate, UINav
         dismiss(animated: true, completion: nil)
     }
   
-  
-    
     
    
+    
     /*
     // MARK: - Navigation
 

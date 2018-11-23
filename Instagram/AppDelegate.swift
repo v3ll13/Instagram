@@ -13,10 +13,12 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let currentUser = PFUser.current()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) in
             configuration.applicationId = "Instagram"
             configuration.clientKey = "asdfghjklzxcvbnmpoiuytrewq"
@@ -24,32 +26,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }))
         
         // check if user is logged in.
-       /* if PFUser.current() != nil {
+    if PFUser.current() != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             // view controller currently being set in Storyboard as default will be overridden
-            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController")
-        }*/
+            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "Authentificated")
+        }
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name("didLogout"), object: nil, queue: OperationQueue.main) { (Notification) in
+            print("Logout notification received")
+            // TODO: Logout the User
+            logOut()
+            // TODO: Load and show the login view controller
+        }
+        NotificationCenter.default.addObserver(forName: Notification.Name("didCancel"), object: nil, queue: OperationQueue.main) { (Notification) in
+            print("Cancel Capture")
+            // TODO: Cancel
+            cancel()
+            // TODO: Load and show the login view controller
+            
+        }
+        NotificationCenter.default.addObserver(forName: Notification.Name("didShare"), object: nil, queue: OperationQueue.main) { (Notification) in
+            print("Picture Shared Successfully")
+            share()
+            // TODO: Load and show the login view controller
+        }
+        func share(){
+            if PFUser.current() != nil {
+                let vc = storyboard.instantiateViewController(withIdentifier: "IGViewController")
+                window?.rootViewController = vc
+            }
+        }
+        
+        func cancel(){
+            if PFUser.current() != nil {
+                let vc = storyboard.instantiateViewController(withIdentifier: "IGViewController")
+                window?.rootViewController = vc
+            }
+        }
+        
+        
+        func logOut() {
+            // print("logOut success")
+            
+            // Logout the current user
+            PFUser.logOutInBackground(block: { (error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    print("Successful loggout")
+                    // Load and show the login view controller
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let LoginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewID")
+                    self.window?.rootViewController = LoginViewController
+                }
+            })
+        }
+        
+        
+        
 
         return true
     }
     
     
-    func logOut() {
-        // print("logOut success")
-        
-        // Logout the current user
-        PFUser.logOutInBackground(block: { (error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("Successful loggout")
-                // Load and show the login view controller
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let LoginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewID")
-                self.window?.rootViewController = LoginViewController
-            }
-        })
-    }
+    
+   
+    
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
